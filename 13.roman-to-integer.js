@@ -1,8 +1,4 @@
-/*
- * @lc app=leetcode id=13 lang=javascript
- *
- * [13] Roman to Integer
- */
+// Hash Table - Math - String
 
 // @lc code=start
 /**

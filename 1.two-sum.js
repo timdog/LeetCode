@@ -1,3 +1,5 @@
+// Array - Hash Table
+
 /*
  * @lc app=leetcode id=1 lang=javascript
  *
