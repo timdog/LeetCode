@@ -12,18 +12,15 @@
  * @return {ListNode}
  */
  var middleNode = function(head) {
-    let node = head;
-    let length = 0;
-    while (node) {
-        length++;
-        node = node.next;
+    let fast = head;
+    let slow = fast;
+    // fast moves 2 nodes at a time. if there are an even number of
+    // nodes fast will be left with 1 remaining node at the end.
+    // the while loop lets fast go past the last node once so that
+    // slow will point to the right-most middle node.
+    while (fast && fast.next) {
+        fast = fast.next.next;
+        slow = slow.next;
     }
-    
-    let move = Math.floor(length / 2);
-    while (move) {
-        move--;
-        head = head.next;
-    }
-    
-    return head;
+    return slow;
 };

@@ -5,13 +5,8 @@
  * @return {number[]}
  */
  var runningSum = function(nums) {
-    let result = [];
-    for (let i = 0; i < nums.length; i++) {
-        let k = 0;
-        for (let j = i; j >= 0; j--) {
-            k += nums[j];
-        }
-        result.push(k);
+    for (let i = 1; i < nums.length; i++) {
+        nums[i] += nums[i - 1];
     }
-    return result;
+    return nums;
 };

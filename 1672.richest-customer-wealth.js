@@ -4,18 +4,20 @@
  * @param {number[][]} accounts
  * @return {number}
  */
+
+/**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
  var maximumWealth = function(accounts) {
-    let wealths = [];
-    for (let i = 0; i < accounts.length; i++) {
-        let wealth = 0;
-        for (const w of accounts[i]) {
-            wealth += w;
-        }
-        wealths.push(wealth);
-    }
-    let result = 0;
-    for (let j = 0; j < wealths.length; j++) {
-        result = wealths[j] > result ? wealths[j] : result;
-    }
-    return result;
+    return Math.max(...accounts.map(a => a.reduce((p, c) => p + c)));
 };
+
+// var maximumWealth = function(accounts) {
+//     let result = 0;
+//     for (let account of accounts) {
+//         let wealth = account.reduce((p, c) => p + c);
+//         result = wealth > result ? wealth : result;        
+//     }
+//     return result;
+// };
