@@ -1,18 +1,7 @@
 // Array - Hash Table
 
-/*
- * @lc app=leetcode id=1 lang=javascript
- *
- * [1] Two Sum
- */
-
-// @lc code=start
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
 var twoSum = function(nums, target) {
+    // Brute Force
     let result = [];
     let found = false;
     for (let j = 0; j < nums.length && !found; j++) {
@@ -25,5 +14,14 @@ var twoSum = function(nums, target) {
     }
     return result;
 };
-// @lc code=end
+
+var twoSum = function(nums, target) {
+    // One-pass Hash Table
+    const map = {};
+    for (let i = 0; i < nums.length; i++) {
+        let diff = target - nums[i];
+        if (diff in map) return [i, map[diff]];
+        map[nums[i]] = i;
+    }
+};
 
