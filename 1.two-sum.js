@@ -2,17 +2,12 @@
 
 var twoSum = function(nums, target) {
     // Brute Force
-    let result = [];
-    let found = false;
-    for (let j = 0; j < nums.length && !found; j++) {
-        for (let k = j + 1; k < nums.length && !found; k++) {
-            if (nums[j] + nums[k] === target) {
-                result.push(...[j, k]);
-                found = true;
-            }
+    for (let j = 0; j < nums.length; j++) {
+        for (let k = j + 1; k < nums.length; k++) {
+            if (nums[j] + nums[k] === target) return [j, k];
         }
     }
-    return result;
+    return [];
 };
 
 var twoSum = function(nums, target) {
